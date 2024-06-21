@@ -4,9 +4,9 @@
     <p class="m-0">{{ note.content }}</p>
     <ng-template pTemplate="footer">
       <div class="flex gap-3 mt-1 mb-1">
-          <p-button [routerLink]="['/detail', note.id]" icon="pi pi-eye" [rounded]="true" severity="success" [outlined]="true"></p-button>
-          <p-button [routerLink]="['/edit', note.id]" icon="pi pi-pencil" [rounded]="true" severity="secondary" [outlined]="true"></p-button>
-          <p-button (click)="deleteNote(note.id)" icon="pi pi-times" [rounded]="true" severity="danger" [outlined]="true"></p-button>
+          <p-button class="mr" [routerLink]="['/detail', note.id]" icon="pi pi-eye" [rounded]="true" severity="success" [outlined]="true"></p-button>
+          <p-button class="mr"[routerLink]="['/edit', note.id]" icon="pi pi-pencil" [rounded]="true" severity="secondary" [outlined]="true"></p-button>
+          <p-button class="mr" (click)="deleteNote(note.id)" icon="pi pi-times" [rounded]="true" severity="danger" [outlined]="true"></p-button>
       </div>
   </ng-template>
 </p-card>

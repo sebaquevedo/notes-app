@@ -1,21 +1,33 @@
 import { Injectable } from '@angular/core';
 import { Note } from '../interfaces/note.interface';
+import * as CryptoJS from 'crypto-js';
 
 @Injectable({
   providedIn: 'root',
 })
 export class NoteService {
   private storageKey = 'notes';
+  key = '123';
 
   constructor() {}
 
+  private encrypt(txt: string): string {
+    return CryptoJS.AES.encrypt(txt, this.key).toString();
+  }
+
+  private decrypt(txtToDecrypt: string) {
+    return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(
+      CryptoJS.enc.Utf8
+    );
+  }
+
   private getNotes(): Note[] {
-    const notes = localStorage.getItem(this.storageKey);
+    const notes = this.decrypt(localStorage.getItem(this.storageKey)!);
     return notes ? JSON.parse(notes) : [];
   }
 
   private saveNotes(notes: Note[]): void {
-    localStorage.setItem(this.storageKey, JSON.stringify(notes));
+    localStorage.setItem(this.storageKey, this.encrypt(JSON.stringify(notes)));
   }
 
   getAllNotes(): Note[] {
