@@ -5,7 +5,7 @@ import { NoteService } from '../../services/note.service';
 @Component({
   selector: 'app-note-edit',
   templateUrl: './note-edit.component.html',
-  styleUrls: ['./note-edit.component.css'],
+  styleUrls: ['./note-edit.component.scss'],
 })
 export class NoteEditComponent implements OnInit {
   note: any = { title: '', content: '' };

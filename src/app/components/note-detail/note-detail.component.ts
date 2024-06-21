@@ -5,7 +5,7 @@ import { NoteService } from '../../services/note.service';
 @Component({
   selector: 'app-note-detail',
   templateUrl: './note-detail.component.html',
-  styleUrls: ['./note-detail.component.css'],
+  styleUrls: ['./note-detail.component.scss'],
 })
 export class NoteDetailComponent implements OnInit {
   note: any;
