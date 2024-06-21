@@ -1,1 +1,8 @@
-<p>note-list works!</p>
+<div *ngFor="let note of notes">
+    <h3>{{ note.title }}</h3>
+    <p>{{ note.content }}</p>
+    <button (click)="deleteNote(note.id)">Delete</button>
+    <a [routerLink]="['/edit', note.id]">Edit</a>
+    <a [routerLink]="['/detail', note.id]">View</a>
+  </div>
+  <a routerLink="/create">Add Note</a>
