@@ -1,6 +1,10 @@
-<div *ngIf="note">
-    <h2>{{ note.title }}</h2>
-    <p>{{ note.content }}</p>
-    <a routerLink="/edit/{{note.id}}">Edit</a>
-    <a routerLink="/">Back to List</a>
+
+
+  <div class="paper">
+    <div class="content" *ngIf="note">
+      <h2>{{ note.title }}</h2>
+      <p>{{ note.content }}</p>
+      <p-button type="submit" icon="pi pi-pencil" routerLink="/edit/{{note.id}}" label="Edit"></p-button>
+      <p-button type="submit" routerLink="/" icon="pi pi-list" label="Back to List"></p-button>
+    </div>
   </div>
