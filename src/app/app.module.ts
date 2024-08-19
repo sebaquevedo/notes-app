@@ -8,6 +8,10 @@ import { NoteDetailComponent } from './components/note-detail/note-detail.compon
 import { NoteEditComponent } from './components/note-edit/note-edit.component';
 import { NoteCreateComponent } from './components/note-create/note-create.component';
 import { FormsModule } from '@angular/forms';
+import { CardModule } from 'primeng/card';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputTextareaModule } from 'primeng/inputtextarea';
 
 @NgModule({
   declarations: [
@@ -17,7 +21,15 @@ import { FormsModule } from '@angular/forms';
     NoteEditComponent,
     NoteCreateComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    CardModule,
+    ButtonModule,
+    InputTextModule,
+    InputTextareaModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
