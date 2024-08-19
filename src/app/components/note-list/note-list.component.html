@@ -1,8 +1,15 @@
-<div *ngFor="let note of notes">
-    <h3>{{ note.title }}</h3>
-    <p>{{ note.content }}</p>
-    <button (click)="deleteNote(note.id)">Delete</button>
-    <a [routerLink]="['/edit', note.id]">Edit</a>
-    <a [routerLink]="['/detail', note.id]">View</a>
-  </div>
-  <a routerLink="/create">Add Note</a>
+
+<div *ngFor="let note of notes" class="ma">
+<p-card  header="{{note.title}}" [routerLink]="['/detail', note.id]" >
+    <p class="m-0">{{ note.content }}</p>
+    <ng-template pTemplate="footer">
+      <div class="flex gap-3 mt-1 mb-1">
+          <p-button class="mr" [routerLink]="['/detail', note.id]" icon="pi pi-eye" [rounded]="true" severity="success" [outlined]="true"></p-button>
+          <p-button class="mr"[routerLink]="['/edit', note.id]" icon="pi pi-pencil" [rounded]="true" severity="secondary" [outlined]="true"></p-button>
+          <p-button class="mr" (click)="deleteNote(note.id)" icon="pi pi-times" [rounded]="true" severity="danger" [outlined]="true"></p-button>
+      </div>
+  </ng-template>
+</p-card>
+</div>
+
+  
