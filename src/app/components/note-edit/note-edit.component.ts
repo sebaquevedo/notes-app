@@ -22,6 +22,7 @@ export class NoteEditComponent implements OnInit {
   }
 
   saveNote(): void {
+    console.log(this.note);
     if (this.note.id) {
       this.noteService.updateNote(
         this.note.id,

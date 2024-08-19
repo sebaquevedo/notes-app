@@ -6,6 +6,7 @@
       <label for="content">Content:</label>
       <textarea rows="5" cols="30" pInputTextarea id="content" [(ngModel)]="note.content" name="content" required></textarea>
       <p-button type="submit" icon="pi pi-save" label="Submit"></p-button>
-      <p-button type="submit" icon="pi pi-list" label="Back to List"></p-button>
+      <p-button routerLink="/" type="submit" icon="pi pi-list" label="Back to List"></p-button>
+    
     </form>
   </div>

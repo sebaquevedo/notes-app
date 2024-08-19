@@ -22,11 +22,18 @@ export class NoteService {
   }
 
   private getNotes(): Note[] {
-    const notes = this.decrypt(localStorage.getItem(this.storageKey)!);
-    return notes ? JSON.parse(notes) : [];
+    const encryptedData = localStorage.getItem(this.storageKey);
+    if (encryptedData) {
+      const notes = this.decrypt(encryptedData);
+      return notes ? JSON.parse(notes) : [];
+    } else {
+      console.warn(`No data found for key: ${this.storageKey}`);
+      return [];
+    }
   }
 
   private saveNotes(notes: Note[]): void {
+    console.log('servicio: ', notes);
     localStorage.setItem(this.storageKey, this.encrypt(JSON.stringify(notes)));
   }
 
